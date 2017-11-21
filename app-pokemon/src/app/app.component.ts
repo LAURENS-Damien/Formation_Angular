@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { POKEMONS } from './mock-pokemons';
+import { Pokemon } from './pokemon';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  pokemons = POKEMONS;
+
+  selectPokemon(pokemon: Pokemon) {
+        console.log('Vous avez cliqué sur ' + pokemon.name);
+    }
 }
