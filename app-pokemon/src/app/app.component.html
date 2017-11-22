@@ -1,35 +1,65 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<h2>Mes Pokemons</h2>
-<ul>
-  <li *ngFor="let pokemon of pokemons">
-    <span>{{pokemon.id}}</span> 
-    <span>{{pokemon.name}}</span> 
-    
-    <!-- Créer une liaison avec les événements -->
-    <img width="200" alt="Photo Pokemon" (click)="selectPokemon(pokemon)" src={{pokemon.picture}}>
-  </li>
-</ul>
+<div class="container-fluid">
+	<!--The content below is only a placeholder and can be replaced.-->
+	<h2>Mes Pokemons</h2>
+<!-- 	<ul>
+	  <li *ngFor="let pokemon of pokemons">
+	    <span>{{pokemon.id}}</span> 
+	    <span>{{pokemon.name}}</span> 
+	    
+	    Créer une liaison avec les événements
+	    <img width="200" alt="Photo Pokemon" (click)="selectPokemon(pokemon)" src={{pokemon.picture}}>
+	  </li>
+	</ul> -->
 
-<!-- Récupérer les valeurs entrées par l'utilisateur -->
-<br><br>
-<span>Utilisation de l'objet Event :</span>
-<input (keyup)="onKey($event)">
-<p>{{values}}</p>
-
-<!-- Variables référencées dans le template -->
-<br><br>
-<span>Utilisation basique d'une variable locale déclarée dans le template :</span>
-<input #box (keyup)="0">
-<p>{{box.value}}</p>
-
-<br><br>
-<span>Mise à jour du premier input avec utilisation d'une varaible locale plutôt que d'utiliser l'objet Event :</span>
-<input #box2 (keyup)="onKey2(box2.value)">
-<p>{{values2}}</p>
-
-
-<!-- Détecter l'appui sur la touche Entrée et détecter la perte du focus sur un élément  -->
-<br><br>
-<span>Détecter l'appui sur la touche Entrée :</span>
-<input #box3 (keyup.enter)="onKey3(box3.value)" (blur)="onKey3(box3.value)">
-<p>{{values3}}</p>
+	<div class="row">
+		<div class="col-lg-4" *ngFor="let pokemon of pokemons">
+			<div class="card mb-3">
+			  	<img class="card-img-top" src={{pokemon.picture}} alt="Photo Pokemon">
+			  	<div class="card-body">
+			    <h4 class="card-title">{{pokemon.name}}</h4>
+			    <p class="card-text">{{pokemon.created}}</p>
+			</div>
+	</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Récupérer les valeurs entrées par l'utilisateur -->
+	<br><br>
+	<span>Utilisation de l'objet Event :</span>
+	<input (keyup)="onKey($event)">
+	<p>{{values}}</p>
+	
+	<!-- Variables référencées dans le template -->
+	<br><br>
+	<span>Utilisation basique d'une variable locale déclarée dans le template :</span>
+	<input #box (keyup)="0">
+	<p>{{box.value}}</p>
+	
+	<br><br>
+	<span>Mise à jour du premier input avec utilisation d'une varaible locale plutôt que d'utiliser l'objet Event :</span>
+	<input #box2 (keyup)="onKey2(box2.value)">
+	<p>{{values2}}</p>
+	
+	
+	<!-- Détecter l'appui sur la touche Entrée et détecter la perte du focus sur un élément  -->
+	<br><br>
+	<span>Détecter l'appui sur la touche Entrée :</span>
+	<input #box3 (keyup.enter)="onKey3(box3.value)" (blur)="onKey3(box3.value)">
+	<p>{{values3}}</p>
+</div>
