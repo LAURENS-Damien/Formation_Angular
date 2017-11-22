@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Les Web components</title>
+  </head>
+  <body>
+	<!-- Shadow DOM  -->
+	<p id='paragraphe-shadow'></p> <!-- Un simple paragraphe -->
+	
+	<!-- Template HTML -->
+	<template id="super-heros2">
+		<style>
+			h1 { color: green; };
+		</style>
+		<h1>Green Lantern</h1>
+	</template>
+	
+	<!-- Un import de HTML -->
+	<link rel="import" href="components/google-map/google-map.html">
+
+	<!-- On utilise l'élément personnalisé importé ! -->
+	<google-map latitude="37.790" longitude="-122.390"></google-map>
+	
+    <script src="les_web_components.js"></script>
+  </body>
+</html>
