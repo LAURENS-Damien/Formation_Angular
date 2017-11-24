@@ -10,17 +10,26 @@
 	    <img width="200" alt="Photo Pokemon" (click)="selectPokemon(pokemon)" src={{pokemon.picture}}>
 	  </li>
 	</ul> -->
-
+	<div class="container">
 	<div class="row">
 		<div class="col-lg-4" *ngFor="let pokemon of pokemons">
-			<div class="card mb-3">
+			<!-- <div class="card mb-3">
 			  	<img class="card-img-top" src={{pokemon.picture}} alt="Photo Pokemon">
 			  	<div class="card-body">
 			    <h4 class="card-title">{{pokemon.name}}</h4>
 			    <p class="card-text">{{pokemon.created}}</p>
+			</div> -->
+			<div class="row card-pokemon mb-3">
+				<div class="col-lg-6">
+					<img class="card-img-top" src={{pokemon.picture}} alt="Photo Pokemon">
+				</div>
+				<div class="col-lg-6 card-body">
+					<h4 class="card-title">{{pokemon.name}}</h4>
+					<p class="card-text">{{pokemon.created}}</p>
+				</div>
 			</div>
-	</div>
 		</div>
+	</div>
 	</div>
 	
 	
