@@ -11,3 +11,42 @@
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
+
+.container-fiches-pokemons {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container-fiches-pokemons {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-fiches-pokemons {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-fiches-pokemons {
+    margin-right: 4%;
+  	margin-left: 4%;
+  	width: 91%;
+  	max-width: 91%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-fiches-pokemons {
+    margin-right: 4%;
+  	margin-left: 4%;
+  	width: 91%;
+  	max-width: 91%;
+  	
+  }
+}
