@@ -1,51 +1,21 @@
 <div class="container-fluid">
 	<!--The content below is only a placeholder and can be replaced.-->
 	<h2>Mes Pokemons</h2>
-<!-- 	<ul>
-	  <li *ngFor="let pokemon of pokemons">
-	    <span>{{pokemon.id}}</span> 
-	    <span>{{pokemon.name}}</span> 
-	    
-	    Créer une liaison avec les événements
-	    <img width="200" alt="Photo Pokemon" (click)="selectPokemon(pokemon)" src={{pokemon.picture}}>
-	  </li>
-	</ul> -->
 	<div class="container-fiches-pokemons">
-	<div class="row">
-		<div class="col-lg-4" *ngFor="let pokemon of pokemons">
-			<!-- <div class="card mb-3">
-			  	<img class="card-img-top" src={{pokemon.picture}} alt="Photo Pokemon">
-			  	<div class="card-body">
-			    <h4 class="card-title">{{pokemon.name}}</h4>
-			    <p class="card-text">{{pokemon.created}}</p>
-			</div> -->
-			<div class="card-pokemon mb-3">
-				<div class="col-lg-6">
-					<img class="card-img-top" (click)="selectPokemon(pokemon)" src={{pokemon.picture}} alt="Photo Pokemon">
-				</div>
-				<div class="col-lg-6 card-body">
-					<h4 class="card-title">{{pokemon.name}}</h4>
-					<p class="card-text">{{pokemon.created}}</p>
+		<div class="row">
+			<div class="col-lg-4" *ngFor="let pokemon of pokemons">
+				<div class="card-pokemon mb-3" appShadowCard>
+					<div class="col-lg-6">
+						<img class="card-img-top" (click)="selectPokemon(pokemon)" src={{pokemon.picture}} alt="Photo Pokemon">
+					</div>
+					<div class="col-lg-6 card-body">
+						<h4 class="card-title">{{pokemon.name}}</h4>
+						<p class="card-text">{{pokemon.created}}</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	<!-- Récupérer les valeurs entrées par l'utilisateur -->
