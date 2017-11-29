@@ -10,7 +10,9 @@
 					</div>
 					<div class="col-lg-6 card-body">
 						<h4 class="card-title">{{pokemon.name}}</h4>
-						<p class="card-text">{{pokemon.created}}</p>
+						<p class="card-text">{{pokemon.created | date:"dd/MM/yyyy"}}</p>
+						<!-- on utilise la directive ngFor pour afficher tous les types d'un pokémon donné -->
+				        <h4><span *ngFor='let type of pokemon.types' class="{{ type | pokemonTypeColor }}">{{ type }}</span></h4>
 					</div>
 				</div>
 			</div>

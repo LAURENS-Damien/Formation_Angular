@@ -3,26 +3,25 @@ import { Directive, ElementRef, Renderer, HostListener } from '@angular/core';
 @Directive({ selector: '[appShadowCard]' })
 export class ShadowCardDirective {
 
+    borderSizeOri = '1px';
+    borderColorOri = 'rgba(0, 0, 0, 0.125)';
+    space = ' ';
+
     constructor(private el: ElementRef, private renderer: Renderer) {
-       this.setBorder('#f5f5f5');
-//       this.setHeight('180px');
+      this.setBorder(this.borderSizeOri, this.borderColorOri);
     }
 
-    private setBorder(color: string) {
-        const style = 'solid 1px ' + color;
+    private setBorder(size: string, color: string) {
+      const style = 'solid' + this.space + size + this.space + color;
         this.renderer.setElementStyle(this.el.nativeElement, 'border', style);
     }
 
-    private setHeight(height: string) {
-        this.renderer.setElementStyle(this.el.nativeElement, 'height', height);
-    }
-
     @HostListener('mouseenter') onMouseEnter() {
-        this.setBorder('rgba(0, 0, 0, 0.125)');
+        this.setBorder('1px', 'red');
     }
 
     @HostListener('mouseleave') onMouseLeave() {
-        this.setBorder('rgba(0, 0, 0, 0.125)');
+        this.setBorder(this.borderSizeOri, this.borderColorOri);
     }
 
 }

@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ShadowCardDirective } from './shadow-card.directive';
-
+import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShadowCardDirective
+    ShadowCardDirective,
+    PokemonTypeColorPipe
   ],
   imports: [
     BrowserModule
