@@ -20,7 +20,8 @@ import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
     PageNotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
