@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-list-pokemon',
   templateUrl: './list-pokemon.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./list-pokemon.component.css']
 })
 export class ListPokemonComponent {
   pokemons = POKEMONS;
