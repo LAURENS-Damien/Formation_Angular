@@ -3,24 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ListPokemonComponent } from './list-pokemon.component';
-import { DetailPokemonComponent } from './detail-pokemon.component';
 import { PageNotFoundComponent } from './page-not-found.component';
-
-import { ShadowCardDirective } from './shadow-card.directive';
-import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
+import { PokemonsModule } from './pokemons/pokemons.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShadowCardDirective,
-    PokemonTypeColorPipe,
-    ListPokemonComponent,
-    DetailPokemonComponent,
     PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
+    PokemonsModule,
     AppRoutingModule
   ],
   providers: [],

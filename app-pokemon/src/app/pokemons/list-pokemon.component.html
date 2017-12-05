@@ -1,0 +1,42 @@
+<h2>Mes Pokemons</h2>
+<div class="container-fiches-pokemons">
+	<div class="row">
+		<div class="col-lg-4" *ngFor="let pokemon of pokemons">
+			<div class="card-pokemon mb-3" appShadowCard>
+				<div class="col-lg-6">
+					<img class="card-img-top" (click)="selectPokemon(pokemon)" src={{pokemon.picture}} alt="Photo Pokemon">
+				</div>
+				<div class="col-lg-6 card-body">
+					<h4 class="card-title">{{pokemon.name}}</h4>
+					<p class="card-text">{{pokemon.created | date:"dd/MM/yyyy"}}</p>
+					<!-- on utilise la directive ngFor pour afficher tous les types d'un pokémon donné -->
+			        <h4><span *ngFor='let type of pokemon.types' class="{{ type | pokemonTypeColor }}">{{ type }}</span></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Récupérer les valeurs entrées par l'utilisateur -->
+<br><br>
+<span>Utilisation de l'objet Event :</span>
+<input (keyup)="onKey($event)">
+<p>{{values}}</p>
+
+<!-- Variables référencées dans le template -->
+<br><br>
+<span>Utilisation basique d'une variable locale déclarée dans le template :</span>
+<input #box (keyup)="0">
+<p>{{box.value}}</p>
+
+<br><br>
+<span>Mise à jour du premier input avec utilisation d'une varaible locale plutôt que d'utiliser l'objet Event :</span>
+<input #box2 (keyup)="onKey2(box2.value)">
+<p>{{values2}}</p>
+
+
+<!-- Détecter l'appui sur la touche Entrée et détecter la perte du focus sur un élément  -->
+<br><br>
+<span>Détecter l'appui sur la touche Entrée :</span>
+<input #box3 (keyup.enter)="onKey3(box3.value)" (blur)="onKey3(box3.value)">
+<p>{{values3}}</p>
