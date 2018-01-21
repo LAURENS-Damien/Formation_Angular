@@ -20,4 +20,12 @@ export class PokemonsService {
         }
       }
     }
+
+    // types de pokémons possible
+    getPokemonTypes(): Array<string> {
+      return [
+        'Plante', 'Feu', 'Eau', 'Insecte', 'Normal', 'Electrik',
+        'Poison', 'Fée', 'Vol', 'Combat', 'Psy'
+      ];
+    }
 }

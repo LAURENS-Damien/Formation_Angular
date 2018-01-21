@@ -5,7 +5,8 @@ import { Pokemon } from './pokemon';
 
 @Component({
   selector: 'app-pokemon-form',
-  templateUrl: './pokemon-form.component.html'
+  templateUrl: './pokemon-form.component.html',
+  styleUrls: ['./pokemon-form.component.css']
 })
 export class PokemonFormComponent implements OnInit {
 
@@ -49,6 +50,14 @@ export class PokemonFormComponent implements OnInit {
     console.log('Submit form !');
     const link = ['/pokemon', this.pokemon.id];
     this.router.navigate(link);
+  }
+
+  // valide le nombre de 1-3 types par pokémon
+  isTypesValid(type: string): boolean {
+    if (this.pokemon.types.length >= 3 && !this.hasType(type)) {
+      return false;
+    }
+    return true;
   }
 
 }

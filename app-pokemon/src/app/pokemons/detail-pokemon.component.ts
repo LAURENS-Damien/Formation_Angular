@@ -28,4 +28,10 @@ export class DetailPokemonComponent implements OnInit {
     this.router.navigate(['/pokemons']);
   }
 
+  // Méthode qui s'occupe de la redirection
+  goEdit(pokemon: Pokemon): void {
+    const link = ['/pokemon/edit', pokemon.id];
+    this.router.navigate(link);
+  }
+
 }
