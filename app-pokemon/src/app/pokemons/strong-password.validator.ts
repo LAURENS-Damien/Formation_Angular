@@ -1,4 +1,4 @@
-import { FormGroup, ValidatorFn, AbstractControl } from '@angular/forms';
+import { ValidatorFn, AbstractControl } from '@angular/forms';
 
 export function strongPasswordValidator(): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } => {
