@@ -16,10 +16,19 @@ export class DetailPokemonComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private pokemonsService: PokemonsService) {}
      // on injecte 'route' pour récupérer les paramètres de l'url, et 'router' pour rediriger l'utilisateur.
 
+  // AVANT
+//  ngOnInit(): void {
+//    this.route.params.forEach((params: Params) => {
+//      const id = +params['id'];
+//         // on utilise le service pour récupérer un pokémon en fonction de son identifiant.
+//      this.pokemon = this.pokemonsService.getPokemon(id);
+//    });
+//  }
+  // APRES
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       const id = +params['id'];
-      this.pokemon = this.pokemonsService.getPokemon(id); // on utilise le service pour récupérer un pokémon en fonction de son identifiant.
+      this.pokemonsService.getPokemon(id).then(pokemon => this.pokemon = pokemon);
     });
   }
 

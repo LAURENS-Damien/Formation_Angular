@@ -10,12 +10,18 @@ import { ShadowCardDirective } from './shadow-card.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 import { PokemonRoutingModule } from './pokemons-routing.module';
 import { PokemonsService } from './pokemons.service';
+import { HttpModule } from '@angular/http'; // Module HTTP
+// Importations pour charger et configurer l'API simulée.
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     PokemonRoutingModule
   ],
   declarations: [

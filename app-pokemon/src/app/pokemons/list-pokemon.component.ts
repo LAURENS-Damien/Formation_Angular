@@ -26,8 +26,13 @@ export class ListPokemonComponent implements OnInit {
     this.getPokemons();
   }
 
+  // AVANT
+//  getPokemons(): void {
+//    this.pokemons = this.pokemonsService.getPokemons();
+//  }
+  // APRES
   getPokemons(): void {
-    this.pokemons = this.pokemonsService.getPokemons();
+    this.pokemonsService.getPokemons().then(pokemons => this.pokemons = pokemons);
   }
 
   selectPokemon(pokemon: Pokemon): void {
