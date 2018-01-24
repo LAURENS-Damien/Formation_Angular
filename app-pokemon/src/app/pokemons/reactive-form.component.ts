@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import {strongPasswordValidator} from './strong-password.validator';
+import { strongPasswordValidator} from './strong-password.validator';
+import { passwordMatchValidator } from './password-match.validator';
 
 @Component({
   selector: 'app-reactive-form',
@@ -39,7 +40,7 @@ export class ReactiveFormComponent implements OnInit {
         password: ['', Validators.compose([Validators.required, strongPasswordValidator()])],
         // on applique notre validateur de la même manière qu'un validateur 'classique'
         passwordConfirm: ['', Validators.compose([Validators.required, strongPasswordValidator()])]
-      })
+      }, { validator: passwordMatchValidator() })
     });
 
     // on déclare une variable 'person', avec la même structure que le formulaire.
