@@ -79,4 +79,9 @@
     </div>
   </div>
 </form>
-<h3 *ngIf="!pokemon" class="center">Aucun pokémon à éditer...</h3>
+<!-- Avant -->
+<!-- <h3 *ngIf='!pokemon' class="center">Aucun pokémon à éditer...</h3> -->
+<!-- Après -->
+<h3 *ngIf='!pokemon' class="center">
+  <app-pkmn-loader></app-pkmn-loader>
+</h3>

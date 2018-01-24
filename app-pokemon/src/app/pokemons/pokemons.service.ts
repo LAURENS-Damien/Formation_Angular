@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Pokemon } from './pokemon';
 import { POKEMONS } from './mock-pokemons';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptionsArgs } from '@angular/http';
 // import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 
@@ -54,6 +54,18 @@ export class PokemonsService {
         'Plante', 'Feu', 'Eau', 'Insecte', 'Normal', 'Electrik',
         'Poison', 'Fée', 'Vol', 'Combat', 'Psy'
       ];
+    }
+
+    // La méthode 'update' persiste les modifications d'un pokémon, dans l'API !
+    update(pokemon: Pokemon): Promise<Pokemon> {
+      const url = `app-pokemon/pokemons/${pokemon.id}`;
+      const headers = new Headers({'Content-Type': 'application/json'});
+
+      return this.http
+                 .put(url, JSON.stringify(pokemon))
+                 .toPromise()
+                 .then(() => pokemon)
+                 .catch(this.handleError);
     }
 
     // Gestion des erreurs

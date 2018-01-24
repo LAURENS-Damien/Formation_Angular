@@ -45,11 +45,21 @@ export class PokemonFormComponent implements OnInit {
     }
   }
 
+  // AVANT
   // La méthode appelée lorsque le formulaire est soumis.
+//  onSubmit(): void {
+//    console.log('Submit form !');
+//    const link = ['/pokemon', this.pokemon.id];
+//    this.router.navigate(link);
+//  }
+  // APRES
+  // La méthode appelée lorsque le formulaire est soumis pour la validation...
   onSubmit(): void {
-    console.log('Submit form !');
-    const link = ['/pokemon', this.pokemon.id];
-    this.router.navigate(link);
+    this.pokemonsService.update(this.pokemon)
+      .then(() => {
+        const link = ['/pokemon', this.pokemon.id];
+        this.router.navigate(link);
+      });
   }
 
   // valide le nombre de 1-3 types par pokémon

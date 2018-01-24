@@ -43,4 +43,9 @@
       </div>
   </div>
 </div>
-<h4 *ngIf='!pokemon' class="center">Aucun pokémon à afficher !</h4>
+<!-- Avant -->
+<!-- <h4 *ngIf='!pokemon' class="center">Aucun pokémon à afficher !</h4> -->
+<!-- Après -->
+<h4 *ngIf='!pokemon' class="center">
+  <app-pkmn-loader></app-pkmn-loader>
+</h4>
