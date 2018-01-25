@@ -16,6 +16,7 @@ import { HttpModule } from '@angular/http'; // Module HTTP
 // Importations pour charger et configurer l'API simulée.
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { AuthGuard } from './auth-guard.service';
 
 @NgModule({
   imports: [
@@ -37,6 +38,6 @@ import { InMemoryDataService } from './in-memory-data.service';
     ShadowCardDirective,
     PokemonTypeColorPipe
   ],
-  providers: [PokemonsService]
+  providers: [PokemonsService, AuthGuard]
 })
 export class PokemonsModule {}
