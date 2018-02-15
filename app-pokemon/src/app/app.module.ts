@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginRoutingModule } from './pokemons/login-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +19,7 @@ import { PokemonsModule } from './pokemons/pokemons.module';
     LoginRoutingModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [Title],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
